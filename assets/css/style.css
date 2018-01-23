@@ -1,0 +1,60 @@
+body{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100vh;
+	background-color: #248cf6;
+}
+@font-face {
+
+    font-family: 'coolvetica_rg';
+
+    src: url('../fonts/coolvetica rg.ttf');
+
+}
+@font-face {
+
+    font-family: 'Lato-Regular';
+
+    src: url('../fonts/Lato-Regular.ttf');
+
+}
+.navbar {
+	background-color: #248cf6 !important;
+	width: 100%;
+	height: 100vh;
+	font-size: 30px;
+	font-family: 'Lato-Regular';
+	font-size: 2rem;
+	
+		
+}
+ul{
+	padding-top: 30px;
+	padding-bottom: 50px;
+	
+	border-right: 5px solid #367fc9;
+}
+a{	
+	
+	
+	color: white !important;
+
+}
+h1{
+	font-family: 'coolvetica_rg';
+	font-size: 10rem;
+	font-weight: bold;
+
+}
+.titre{
+margin: auto;
+color: white;
+}
+#stitre{
+	font-family: 'Lato-Regular';
+	font-size: 5rem;
+	font-weight: bold;
+
+}
+
