@@ -8,27 +8,23 @@ define('LGMAC_VERSION', '1.0.1');
 function lgmac_scripts() {
 
 	// Chargement des styles
-	wp_enqueue_style( 'lgmac_bootstrap-core', get_template_directory_uri() . '/assets/css/bootstrap.min.css', array(), LGMAC_VERSION, 'all');
-	wp_enqueue_style( 'lgmac_custom', get_template_directory_uri() . '/style.css', array('lgmac_bootstrap-core'), LGMAC_VERSION, 'all');
+	wp_enqueue_style( 'fullpage', get_template_directory_uri() . '/assets/css/jquery.fullpage.min.css');
+	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css');	
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css');
+	wp_enqueue_style('style', get_template_directory_uri() . '/style.css');
 
 	// Chargement des scripts
-	wp_enqueue_script( 'popper-js', get_template_directory_uri() . '/assets/js/popper.min.js', array('jquery'), LGMAC_VERSION, true); 
-	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery', 'popper-js'), LGMAC_VERSION, true); 		
-	wp_enqueue_script( 'lgmac_admin_script', get_template_directory_uri() . '/assets/js/app.js', array('jquery', 'bootstrap-js'), LGMAC_VERSION, true); 
+	wp_enqueue_script( 'popper-js', get_template_directory_uri() . '/assets/js/jquery.js');		wp_enqueue_script( 'fullpage', get_template_directory_uri() . '/assets/js/jquery.fullpage.min.js');
+	wp_enqueue_script( 'popper-js', get_template_directory_uri() . '/assets/js/popper.min.js'); 
+	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/assets/js/bootstrap.min.js'); 		
+	wp_enqueue_script( 'lgmac_admin_script', get_template_directory_uri() . '/assets/js/script.js'); 
 	
 
 }// fin function lgmac_scripts
 
 add_action('wp_enqueue_scripts', 'lgmac_scripts');
 
-// Chargement dans l'admin
-function lgmac_admin_scripts() {
 
-	// Chargement des styles
-	wp_enqueue_style( 'bootstrap-adm-core', get_template_directory_uri() . '/assets/css/bootstrap.min.css', array(), LGMAC_VERSION);
-}// fin function lgmac_admin_scripts
-
-add_action('admin_init', 'lgmac_admin_scripts');
 
 //======================================================
 //======================  Utilitaires   ================
@@ -40,12 +36,6 @@ function lgmac_setup(){
 
 	//enlève générateur de version wordpress
 	remove_action('wp_head', 'wp_generator');
-
-	//enlève les guillemets à la française
-	//remove_filter('the_content', 'wptexturize');
-
-	//affichage du tittle
-	add_theme_support('title-tag');
 
 	//Register custom navigation walker
 	require_once('includes/class-wp-bootstrap-navwalker.php');
