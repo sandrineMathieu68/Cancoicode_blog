@@ -81,37 +81,34 @@
 							</div>
 							<!-- Post -->
 							<div class="row d-flex justify-content-between">
+							    <?php
+                                
+                                $args = array(
+                                    'posts_per_page' => 3
+                                );
+                                query_posts($args);  
+                                
+                                if(have_posts()) :
+                                    while(have_posts()) : the_post();
+                                
+                                ?>
 								<div class="card col-xs-12 col-sm-12 col-md-3 col-lg-3">
 									<img class="card-img-top" src="assets/img/blog.png" alt="Card image cap">
 									<div class="card-body">
-										<h3 class="card-title">Réalité virtuelle et patrimoine</h3>
-										<p class="sous-titre"><i class="fa fa-calendar-o" aria-hidden="true"></i> 7 janvier 2018 <i class="fa fa-user" aria-hidden="true"></i> Lucie GRIETTE <i class="fa fa-comments" aria-hidden="true"></i> 0 Comment</p>
-										<p class="card-text">Réalité virtuelle et modélisation 3D au service de la culture : Et demain, un musée virtuel ? La réalité virtuelle et la modélisation 3D ne se cantonnent pas aux jeux vidéos ou au cinéma. Dans ce flux continu d’innovation, le monde des musées n’est pas en reste. Ces deux technologies s’implantent peu à peu dans de nombreux sites ou musées..
-										</p>
-										<a href="#" class="btn btn-primary">Voir plus</a>
-									</div>
-								</div>
-								<div class="card col-xs-12 col-sm-12 col-md-3 col-lg-3">
-									<img class="card-img-top" src="assets/img/blog.png" alt="Card image cap">
-									<div class="card-body">
-										<h3 class="card-title">Réalité virtuelle et patrimoine</h3>
-										<p class="sous-titre"> <i class="fa fa-calendar-o" aria-hidden="true"></i> 5 janvier 2018 <i class="fa fa-user" aria-hidden="true"></i> Yohann THOREZ-DEBRUCQ <i class="fa fa-comments" aria-hidden="true"></i> 0 Comment</p>
-										<p class="card-text">La dématérialisation a été une véritable révolution à l’échelle de la planète. Le contenu s’est dématérialisé et la nécessité de tout imprimer, de tout écrire à l’encre sur des feuilles de papier a progressivement disparu dans la plupart des entreprises…
-										</p>
-										<a href="#" class="btn btn-primary">Voir plus</a>
-									</div>
-								</div>
-								<div class="card col-xs-12 col-sm-12 col-md-3 col-lg-3">
-									<img class="card-img-top" src="assets/img/blog.png" alt="Card image cap">
-									<div class="card-body">
-										<h3 class="card-title">Réalité virtuelle et patrimoine</h3>
-										<p class="sous-titre"> <i class="fa fa-calendar-o" aria-hidden="true"></i> 5 janvier 2018 <i class="fa fa-user" aria-hidden="true"></i> Benoît DELOYE <i class="fa fa-comments" aria-hidden="true"></i> 0 Comment</p>
+										<h3 class="card-title"><?php the_title(); ?></h3>
+										<p class="sous-titre"><i class="fa fa-calendar-o" aria-hidden="true"></i> <?php echo get_the_date();?> <i class="fa fa-user" aria-hidden="true"></i> <?php the_author(); ?> <i class="fa fa-comments" aria-hidden="true"></i>0 Comment</p>
 										<p class="card-text">
-											La couette connectée, pour des nuits ni trop chaudes, ni trop froides, et le souci en moins de devoir refaire son lit. SmartDuvet, une société Canadienne a eu une excellente idée pour améliorer la qualité de nos nuits : La couette connectée !
+										<?php echo get_the_excerpt(); ?>
 										</p>
-										<a href="#" class="btn btn-primary">Voir plus</a>
+										<a href="<?php the_permalink(); ?>" class="btn btn-primary">Voir plus</a>
 									</div>
 								</div>
+								<?php 
+                                    endwhile; 
+                                    else :
+                                        echo'<p>Pas de contenu trouvé</p>';
+                                    endif;
+                                ?>
 							</div>
 							<!-- Pagination -->
 							<div class="row">
