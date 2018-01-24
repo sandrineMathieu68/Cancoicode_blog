@@ -16,6 +16,26 @@
 	ul{
 		padding-right: 15px;
 	}
+	/*===   about ====*/
+	h3{
+	font-size: 28px;
+	}
+
+	#quand{	
+		font-size: 15px;
+	}
+	#quoi{
+		font-size: 15px;
+	}
+	.mot{
+	font-size: 15px;
+	}
+	.if{
+		font-size: 15px;
+	}
+	.chevron{
+		margin-left: 9%;
+	}
 
 
 

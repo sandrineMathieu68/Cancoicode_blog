@@ -23,6 +23,12 @@ body{
     src: url('../fonts/Raleway-SemiBold.ttf');
 
 }
+@font-face {
+
+    font-family: 'raleway-regular';
+    src: url('../fonts/raleway-regular.ttf');
+
+}
 .navbar {
 	background-color: #248cf6 !important;
 	width: 100%;
@@ -54,14 +60,42 @@ color: white;
 }
 
 /*===   about ====*/
+.about{
+	background-color: #eceff1;
+}
+.fin{
+	padding-top: 10%;
+}
 h3{
 font-family: 'Raleway-SemiBold';
-color: white;
+color: #248cf6;
 font-size: 48px;
 }
-#quand{
+
+#quand{	
 	font-size: 28px;
-	font-family: 'Lato-Regular';
+	font-family: 'raleway-regular';
+	color: #302f31;	
+}
+#quoi{	
+	font-size: 28px;
+	font-family: 'raleway-regular';
+	color: #302f31;	
+}
+.fin1{
+	padding-top: 5%;
+}
+.mot{
+	font-size: 28px;
+	font-family: 'raleway-regular';
 	color: #302f31;
+}
+.if{
+	color: #db2b6d;
+	font-size: 28px;
+
+}
+.chevron{
+	margin-left: 34%;
 }
 
